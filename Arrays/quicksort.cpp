@@ -39,6 +39,11 @@ int main() {
 	    cin>>arr[j];
 	}
 
+    quicksort(arr,0,i-1);
+    for(int j=0; j<i;j++){
+	    cout<<arr[j];
+	}
+
 	
 	
 	return 0;
