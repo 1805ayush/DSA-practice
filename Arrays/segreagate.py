@@ -6,8 +6,8 @@ for item in arr:
     if(item>0):
         pos.append(item)
     elif(item<0):
-       neg.append(item)
-    
+        neg.append(item)
+
 pos.extend(neg)
-arr = pos
-print(arr)
+for k in range(n):
+    arr[k] = pos[k]
