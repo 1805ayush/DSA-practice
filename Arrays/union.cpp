@@ -7,32 +7,20 @@ int doUnion(int a[], int n, int b[], int m)  {
         int t=0;
         int i=0;
         int j=0;
-        if(m>n){
-            while(t<m){
+        while(i<n && j<m){
                 if(a[i]==b[j]){
                     count++;
+                    i++;
+                    j++;
                 }else if(a[i]<b[j]){
                     i++;
                 }else if(a[i]>b[j]){
                     j++;
                 }
-                t++;
+    
             }
             
-        }else{
-            while(t<n){
-                if(a[i]==b[j]){
-                    count++;
-                }else if(a[i]<b[j]){
-                    i++;
-                }else if(a[i]>b[j]){
-                    j++;
-                }
-                t++;
-            }
-        }
         
-        count=m+n-count;
-        return count;
+        return m+n-count;
     }
-}
+};
