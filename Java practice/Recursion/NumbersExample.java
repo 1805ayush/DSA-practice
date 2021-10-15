@@ -6,9 +6,13 @@ public class NumbersExample {
     static void num1(int num){
         
         if (num==1) {
-            System.out.println(1);
+            System.out.println("*");
         }else{
-            System.out.println(num);
+            for (int i = 0; i < num; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+           // System.out.println(num);
             num1(num-1);
         }
 

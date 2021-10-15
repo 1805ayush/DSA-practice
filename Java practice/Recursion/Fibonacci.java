@@ -2,16 +2,16 @@ public class Fibonacci {
 
     public static void main(String[] args){
         
-        System.out.println(fibo(5));
+        System.out.println(fibo(6));
         
     }
 
     static int fibo(int num){
 
-        if(num==1){
-            return 1;
+        if(num<2){
+            return num;
         }else{
-            return fibo(num-1) * num;
+            return fibo(num-1) + fibo(num-2);
         }
     }
     
