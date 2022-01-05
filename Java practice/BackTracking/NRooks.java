@@ -1,6 +1,6 @@
 public class NRooks {
     public static void main(String[] args) {
-        int n=4;
+        int n=3;
         boolean[][] board = new boolean[n][n];
         System.out.println(rook(board, 0));
     }
