@@ -44,4 +44,37 @@ public class TargetSum {
         return count;
 
     }
+
+    static int targetSumVar(int[] arr,int sumTillNow, int target) {
+        
+        if(arr.length==0){
+        
+            if(sumTillNow==target){
+                return 1;
+            }else{
+                return 0;
+            }
+          //  return 1;
+        }
+
+        int count = 0;
+
+        int[] newArr = new int[arr.length-1];
+        for(int i=0; i<arr.length-1;i++){
+            newArr[i] = arr[i+1];
+        }
+
+        int curr = arr[0];
+
+        sumTillNow = sumTillNow +
+        count+=targetSum(newArr,sumTillNow,target);
+        sumTillNow.remove(sumTillNow.size()-1);
+
+        sumTillNow.add(0-curr);
+        count+=targetSum(newArr,sumTillNow,target);
+        sumTillNow.remove(sumTillNow.size()-1);
+
+        return count;
+
+    }
 }
