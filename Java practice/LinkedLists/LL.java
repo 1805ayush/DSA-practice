@@ -48,6 +48,22 @@ public class LL {
         size++;
     }
 
+    public void insertRec(int val,int position) {
+        head = insertRec(val,position,head);
+    }
+
+    private Node insertRec(int val, int index, Node node){
+        if(index==0){
+            Node temp = new Node(val,node.next);
+            size++;
+            return temp;
+        }
+
+        node.next = insertRec(val,index-1,node.next);
+        return node;
+
+    }
+
     public void deleteFirst() {
         int val = head.value;
         head = head.next;
@@ -96,10 +112,8 @@ public class LL {
             if (temp.value == val){
                 return temp;
             }
-            node = node.next;
+            temp = temp.next;
         }
-
-
         return null;
     }
 
@@ -113,6 +127,27 @@ public class LL {
         }
         System.out.print("End");
 
+    }
+
+    //finding the length of the cycle
+    public int cycleLength(Node head){
+        Node fast = head;
+        node slow =head;
+
+        while(fast != null && fast.next!= null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast==slow) {
+                Node temp = slow;
+                int length=0;
+                do {
+                    temp = temp.next;
+                    length++;
+                } while (temp!= slow);
+                return length;
+            }
+        }
+        return -1;
     }
 
 
