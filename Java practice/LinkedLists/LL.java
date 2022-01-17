@@ -129,6 +129,40 @@ public class LL {
 
     }
 
+    //bubblesort 
+    public void bubbleSort(int row,int column){
+        if(row == 0){
+            return;
+        }
+
+        if(col<row){
+            Node first = get(column);
+            Node second = get(column+1);
+
+            if(first.value >second.value){
+                if(first ==head){
+                    head = second;
+                    first.next =second.next;
+                    second.next = first;
+                }else if(second==tail){
+                    Node previous = get(column-1);
+                    prev.next = second;
+                    tail = first;
+                    first.next = null;
+                    second.next = tail; 
+                }else{
+                    Node previous = get(column-1);
+                    prev.next = second;
+                    first.next = second.next;
+                    second.next = first;
+                }
+            }
+            bubbleSort(row,column+1);
+        }else{
+            bubbleSort(row-1,0);
+        }
+    }
+
     //finding the length of the cycle
     public int cycleLength(Node head){
         Node fast = head;
