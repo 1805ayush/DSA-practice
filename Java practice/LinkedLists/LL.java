@@ -163,6 +163,24 @@ public class LL {
         }
     }
 
+    //Reversing Linked list using Recursion
+
+    private void reverse(Node node){
+        if(node==tail){
+            head =tail;
+            return;
+        }
+
+        reverse(node.next);
+        tail.next =node;
+        node = tail;
+        tail.next = null;
+    }
+
+    //Inplace reversal of LinkedLists
+
+    
+
     //finding the length of the cycle
     public int cycleLength(Node head){
         Node fast = head;
